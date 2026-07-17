@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nick Manzoni | Marketing Operator & Founder</title>
+<meta name="description" content="Nick Manzoni is a founder and marketing operator in South Lake Tahoe. Product marketing, GTM, and growth for sports, outdoor, and health brands.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #16232B;
+    --snow: #F7F9FA;
+    --granite: #5C6B73;
+    --glacier: #A9C5D3;
+    --beacon: #E8552F;
+    --line: #DEE5E9;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+  body {
+    font-family: 'Archivo', sans-serif;
+    font-variation-settings: 'wdth' 100;
+    background: var(--snow);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 17px;
+  }
+  a { color: var(--beacon); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--beacon);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background: var(--ink);
+    color: var(--snow);
+    position: relative;
+    overflow: hidden;
+    padding: 96px 0 88px;
+  }
+  .hero svg.topo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .hero .wrap { position: relative; z-index: 1; }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--glacier);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-variation-settings: 'wdth' 118;
+    font-weight: 750;
+    font-size: clamp(48px, 8vw, 92px);
+    line-height: 0.98;
+    letter-spacing: -0.015em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .thesis {
+    font-size: clamp(19px, 2.4vw, 24px);
+    font-weight: 340;
+    max-width: 640px;
+    color: #DCE6EB;
+    margin-bottom: 40px;
+  }
+  .thesis strong { font-weight: 600; color: var(--snow); }
+  .hero-links { display: flex; flex-wrap: wrap; gap: 14px; }
+  .btn {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    padding: 12px 22px;
+    border: 1px solid var(--glacier);
+    color: var(--snow);
+    border-radius: 2px;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .btn:hover { text-decoration: none; background: rgba(169,197,211,0.12); }
+  .btn.primary {
+    background: var(--beacon);
+    border-color: var(--beacon);
+    color: #fff;
+    font-weight: 500;
+  }
+  .btn.primary:hover { background: #D14A28; }
+
+  /* ---------- Stat strip ---------- */
+  .stats {
+    background: var(--ink);
+    border-top: 1px solid #24343E;
+    color: var(--snow);
+    padding: 26px 0;
+  }
+  .stats .wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 22px 32px;
+  }
+  .stat { font-family: 'IBM Plex Mono', monospace; }
+  .stat b { display: block; font-size: 24px; font-weight: 500; color: var(--snow); }
+  .stat span { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--glacier); }
+
+  /* ---------- Sections ---------- */
+  section { padding: 84px 0; }
+  .kicker {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--beacon);
+    margin-bottom: 14px;
+  }
+  h2 {
+    font-variation-settings: 'wdth' 112;
+    font-weight: 700;
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  .lede { max-width: 660px; font-size: 18px; color: #2C3B44; margin-bottom: 48px; }
+
+  /* Pillars */
+  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 36px; }
+  .pillar { border-top: 3px solid var(--ink); padding-top: 22px; }
+  .pillar h3 { font-size: 19px; font-weight: 650; margin-bottom: 10px; }
+  .pillar p { color: var(--granite); font-size: 16px; }
+
+  /* Work */
+  .work { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .job { display: grid; grid-template-columns: 240px 1fr; gap: 28px; padding: 34px 0; border-bottom: 1px solid var(--line); }
+  .job:last-child { border-bottom: none; }
+  .job .meta h3 { font-size: 19px; font-weight: 700; line-height: 1.25; }
+  .job .meta .role { font-size: 15px; color: var(--granite); margin-top: 4px; }
+  .job .meta .dates { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: var(--granite); margin-top: 8px; }
+  .job .body p { color: #2C3B44; font-size: 16px; margin-bottom: 10px; }
+  .job .body .proof {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--ink);
+    background: var(--snow);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    display: inline-block;
+    padding: 3px 9px;
+    margin: 4px 6px 0 0;
+  }
+
+  /* Off the clock */
+  .field { background: var(--ink); color: var(--snow); position: relative; overflow: hidden; }
+  .field svg.ridge { position: absolute; bottom: 0; left: 0; width: 100%; height: 130px; opacity: 0.5; pointer-events: none; }
+  .field .wrap { position: relative; z-index: 1; }
+  .field h2 { color: var(--snow); }
+  .field p { max-width: 640px; font-size: 18px; color: #DCE6EB; }
+  .field .kicker { color: var(--glacier); }
+
+  /* Contact */
+  .contact p { max-width: 620px; font-size: 18px; color: #2C3B44; margin-bottom: 32px; }
+  .contact .hero-links .btn { border-color: var(--granite); color: var(--ink); }
+  .contact .hero-links .btn:hover { background: rgba(92,107,115,0.08); }
+  .contact .hero-links .btn.primary { color: #fff; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 26px 0 40px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: var(--granite);
+    display: flex;
+  }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; width: 100%; }
+
+  @media (max-width: 720px) {
+    .job { grid-template-columns: 1fr; gap: 12px; }
+    section { padding: 64px 0; }
+    .hero { padding: 72px 0 64px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="topo" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#2E4250" stroke-width="1.4">
+      <path d="M-40,430 C160,360 300,470 480,410 C660,350 780,440 960,380 C1090,335 1180,390 1260,360"/>
+      <path d="M-40,380 C170,310 320,415 500,355 C670,300 800,385 970,330 C1095,290 1180,335 1260,310"/>
+      <path d="M-40,330 C185,260 340,360 520,305 C685,255 815,330 985,282 C1100,248 1185,285 1260,262"/>
+      <path d="M-40,280 C200,215 360,305 540,258 C700,215 830,278 1000,236 C1105,208 1190,238 1260,218"/>
+      <path d="M-40,230 C215,172 380,252 560,212 C715,178 845,228 1015,192 C1110,170 1195,192 1260,176"/>
+      <path d="M-40,180 C230,132 400,200 580,168 C730,142 860,180 1030,150 C1115,134 1200,148 1260,136"/>
+      <path d="M-40,132 C245,95 420,150 600,126 C745,107 875,134 1045,110 C1120,100 1205,108 1260,98"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <p class="eyebrow">South Lake Tahoe, CA &nbsp;&middot;&nbsp; 38.9399&deg; N, 119.9772&deg; W</p>
+    <h1>Nick<br>Manzoni</h1>
+    <p class="thesis">Marketing operator and founder. I turn <strong>technically complex products</strong> into plain language that sells, then build the <strong>full go-to-market machine</strong> around them.</p>
+    <div class="hero-links">
+      <a class="btn primary" href="mailto:nicholas@sportslab360.com">Email me</a>
+      <a class="btn" href="https://linkedin.com/in/nick-manzoni-9a35935a" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://sportslab360.com" target="_blank" rel="noopener">SportsLab360</a>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b>35,000+</b><span>Users built to</span></div>
+    <div class="stat"><b>92%</b><span>Satisfaction rate</span></div>
+    <div class="stat"><b>10+ yrs</b><span>In marketing</span></div>
+  </div>
+</div>
+
+<section id="what">
+  <div class="wrap">
+    <p class="kicker">What I do</p>
+    <h2>Three things, done well</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <h3>Positioning and messaging</h3>
+        <p>Translate complex products into customer-facing value. Feature-to-benefit mapping, launch narratives, and copy that a buyer actually understands on first read.</p>
+      </div>
+      <div class="pillar">
+        <h3>Sales enablement from scratch</h3>
+        <p>Battlecards, one-pagers, talk tracks, and competitive briefs built from zero. Complete libraries aligned to buyer segments and funnel stages, not shelfware.</p>
+      </div>
+      <div class="pillar">
+        <h3>Voice of customer and competitive intel</h3>
+        <p>Positioning grounded in real user research, not assumptions. Segment definition, win-loss patterns, and differentiation you can defend in a sales call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <p class="kicker">Track record</p>
+    <h2>Built, launched, grown</h2>
+
+    <div class="job">
+      <div class="meta">
+        <h3>SportsLab360</h3>
+        <p class="role">Founder &amp; Owner</p>
+        <p class="dates">2017 &ndash; PRESENT</p>
+      </div>
+      <div class="body">
+        <p>B2B2C SaaS platform helping athletes and coaching organizations improve performance. Built from zero with no outside funding, owning positioning, messaging, product, and GTM end to end. Researched the first 10,000 users to define segments and sharpen messaging, then rebuilt onboarding around what they said.</p>
+        <span class="proof">0 &rarr; 35,000+ users</span>
+        <span class="proof">92% CSAT</span>
+        <span class="proof">+25% retention</span>
+        <span class="proof">+30% CLTV</span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="meta">
+        <h3>Recast</h3>
+        <p class="role">Product Marketing Manager</p>
+        <p class="dates">DEC 2024 &ndash; DEC 2025</p>
+      </div>
+      <div class="body">
+        <p>Marketing measurement and MMM platform for enterprise teams. Built full GeoLift launch plan, translating a genuinely technical product into clear enterprise messaging. Built the sales enablement library and a dynamic CRM in Clay from scratch.</p>
+        <span class="proof">200 signups, month one</span>
+        <span class="proof">Full enablement library</span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="meta">
+        <h3>The South Lake Scoop</h3>
+        <p class="role">Founder &amp; Publisher</p>
+        <p class="dates">DEC 2025 &ndash; PRESENT</p>
+      </div>
+      <div class="body">
+        <p>Independent newsletter covering the South Lake Tahoe community. Built the audience, the editorial voice, and the sponsorship revenue model, including targeted outreach and audience insight packages that close outdoor and lifestyle brand partnerships.</p>
+        <span class="proof">2,100+ subscribers</span>
+        <span class="proof">64% open rate</span>
+        <span class="proof">6.4% CTR</span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="meta">
+        <h3>Mullins P.C.</h3>
+        <p class="role">Fractional Marketing Lead</p>
+        <p class="dates">2025 &ndash; PRESENT</p>
+      </div>
+      <div class="body">
+        <p>Sole marketing function for a specialized nonprofit CPA firm. Own strategy, content, and brand positioning end to end, including the firm's first personas, messaging frameworks, and repeatable LinkedIn content infrastructure.</p>
+        <span class="proof">Sole marketer</span>
+        <span class="proof">First repeatable content system</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="field" id="field">
+  <svg class="ridge" viewBox="0 0 1200 130" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,130 L0,90 L120,55 L230,85 L340,30 L450,75 L560,18 L680,68 L790,40 L900,80 L1010,35 L1110,70 L1200,50 L1200,130 Z" fill="#22333E"/>
+  </svg>
+  <div class="wrap">
+    <p class="kicker">Off the clock</p>
+    <h2>Tested in the field</h2>
+    <p>Competitive IFSA freeride skier. Ultramarathoner. 100+ days a year in the Sierra Nevada backcountry. I market sports, outdoor, and health products as someone who lives inside them, not someone who researched the category last quarter.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <p class="kicker">Get in touch</p>
+    <h2>Open to full-time, fractional, and contract work</h2>
+    <p>Strongest fit: sports, outdoor and ski, personal health, and early-stage teams that need one person who can set the strategy and then execute all of it.</p>
+    <div class="hero-links">
+      <a class="btn primary" href="mailto:nicholas@sportslab360.com">nicholas@sportslab360.com</a>
+      <a class="btn" href="tel:9524121333">952-412-1333</a>
+      <a class="btn" href="https://linkedin.com/in/nick-manzoni-9a35935a" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Nick Manzoni</span>
+    <span>South Lake Tahoe, California</span>
+  </div>
+</footer>
+
+</body>
+</html>
