@@ -57,6 +57,20 @@
     pointer-events: none;
   }
   .hero .wrap { position: relative; z-index: 1; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 48px;
+    align-items: center;
+  }
+  .portrait img {
+    display: block;
+    width: 264px;
+    height: 264px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--glacier);
+  }
   .eyebrow {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 13px;
@@ -118,6 +132,7 @@
   .stat { font-family: 'IBM Plex Mono', monospace; }
   .stat b { display: block; font-size: 24px; font-weight: 500; color: var(--snow); }
   .stat span { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--glacier); }
+  .stat.brand b { font-family: 'Archivo', sans-serif; font-variation-settings: 'wdth' 112; font-weight: 700; }
 
   /* ---------- Sections ---------- */
   section { padding: 84px 0; }
@@ -194,6 +209,9 @@
     .job { grid-template-columns: 1fr; gap: 12px; }
     section { padding: 64px 0; }
     .hero { padding: 72px 0 64px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+    .portrait { order: -1; }
+    .portrait img { width: 148px; height: 148px; }
   }
 </style>
 </head>
@@ -211,23 +229,28 @@
       <path d="M-40,132 C245,95 420,150 600,126 C745,107 875,134 1045,110 C1120,100 1205,108 1260,98"/>
     </g>
   </svg>
-  <div class="wrap">
-    <p class="eyebrow">South Lake Tahoe, CA &nbsp;&middot;&nbsp; 38.9399&deg; N, 119.9772&deg; W</p>
-    <h1>Nick<br>Manzoni</h1>
-    <p class="thesis">Marketing operator and founder. I turn <strong>technically complex products</strong> into plain language that sells, then build the <strong>full go-to-market machine</strong> around them.</p>
-    <div class="hero-links">
-      <a class="btn primary" href="mailto:nicholas@sportslab360.com">Email me</a>
-      <a class="btn" href="https://linkedin.com/in/nick-manzoni-9a35935a" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://sportslab360.com" target="_blank" rel="noopener">SportsLab360</a>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow">South Lake Tahoe, CA &nbsp;&middot;&nbsp; 38.9399&deg; N, 119.9772&deg; W</p>
+      <h1>Nick<br>Manzoni</h1>
+      <p class="thesis">10+ year marketing operator and founder. I turn <strong>technically complex products</strong> into plain language that sells, then build the <strong>full go-to-market machine</strong> around them.</p>
+      <div class="hero-links">
+        <a class="btn primary" href="mailto:nicholas@sportslab360.com">Email me</a>
+        <a class="btn" href="https://linkedin.com/in/nick-manzoni-9a35935a" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://sportslab360.com" target="_blank" rel="noopener">SportsLab360</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="headshot.png" alt="Nick Manzoni" onerror="this.closest('.portrait').style.display='none'">
     </div>
   </div>
 </header>
 
 <div class="stats">
   <div class="wrap">
-    <div class="stat"><b>35,000+</b><span>Users built to</span></div>
+    <div class="stat brand"><b>SportsLab360</b><span>Founded 2017, bootstrapped</span></div>
+    <div class="stat"><b>35,000+</b><span>Registered users</span></div>
     <div class="stat"><b>92%</b><span>Satisfaction rate</span></div>
-    <div class="stat"><b>10+ yrs</b><span>In marketing</span></div>
   </div>
 </div>
 
@@ -322,7 +345,7 @@
   <div class="wrap">
     <p class="kicker">Off the clock</p>
     <h2>Tested in the field</h2>
-    <p>Competitive IFSA freeride skier. Ultramarathoner. 100+ days a year in the Sierra Nevada backcountry. Passionate about marketing sports, outdoor, and health products as someone who lives inside them.</p>
+    <p>Competitive IFSA freeride skier. Ultramarathoner. 100+ days a year in the Sierra Nevada backcountry. I market sports, outdoor, and health products as someone who lives inside them, not someone who researched the category last quarter.</p>
   </div>
 </section>
 
